@@ -1,26 +1,29 @@
-import React from "react";
 
+import { useState } from "react";
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
+
+
+
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+
+	const [count, setCount] = useState(0);
+ 
+	function updateCount(parametro) {
+	
+		setCount(new Function(`return ${count} ${parametro} 1`))
+	}
+
+	return (
+		<div className="text-center bg-danger">
+            
+			<button className="btn btn-light" onClick={() => updateCount('+')} >Suma</button>
+			<button className="btn btn-light" onClick={() => updateCount('-')} >Resta</button>
+			<h1 className="text-center mt-5">{count}</h1>
+			
 		</div>
 	);
 };
