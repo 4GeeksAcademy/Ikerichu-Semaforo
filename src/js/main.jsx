@@ -13,6 +13,9 @@ import Home from './components/Home';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Home/>
+    <div className='container-fluid w-50 vh-50'>
+      <Home/>
+    </div>
+    
   </React.StrictMode>,
 )
